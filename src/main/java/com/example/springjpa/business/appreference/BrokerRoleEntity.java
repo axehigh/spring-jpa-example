@@ -10,13 +10,10 @@ import java.io.Serializable;
 @Entity
 @Table(name = "app_reference")
 @Where(clause = "domain='BROKER_ROLE'")
-public class AppReferenceEntity implements Serializable {
+public class BrokerRoleEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    @Column(name = "domain")
-    private String domain;
 
     @Column(name = "code")
     private String code;

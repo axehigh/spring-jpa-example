@@ -7,14 +7,14 @@ import java.util.List;
 @Service
 public class BrokerService {
 
-    final BrokerRepository brokerCrud;
+    final BrokerRepository brokerRepository;
 
     public BrokerService(BrokerRepository brokerCrud) {
-        this.brokerCrud = brokerCrud;
+        this.brokerRepository = brokerCrud;
     }
 
     public List<BrokerEntity> findAll() {
-        return brokerCrud.findAll();
+        return brokerRepository.findAll();
     }
 
 }
