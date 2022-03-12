@@ -22,3 +22,9 @@ spring:
     minIdle: 2
     initialSize: 5
     removeAbandoned: true
+
+
+  logging:
+    level:
+      org.hibernate.SQL: DEBUG
+      org.hibernate.type.descriptor.sql.BasicBinder: TRACE
