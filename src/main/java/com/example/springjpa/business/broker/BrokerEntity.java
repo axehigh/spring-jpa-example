@@ -1,5 +1,6 @@
 package com.example.springjpa.business.broker;
 
+import com.example.springjpa.business.appreference.AppReferenceEntity;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -17,4 +18,8 @@ public class BrokerEntity {
 
     @Column(name = "broker_role")
     private String brokerRole;
+
+    @ManyToOne
+    @JoinColumn(name = "broker_role", referencedColumnName = "code", insertable = false, updatable = false)
+    private AppReferenceEntity role;
 }

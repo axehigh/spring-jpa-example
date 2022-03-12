@@ -1,6 +1,11 @@
 package com.example.springjpa.business.appreference;
 
+import com.example.springjpa.business.broker.BrokerEntity;
 import org.springframework.data.repository.CrudRepository;
 
-public interface AppReferenceRepository extends CrudRepository<AppReferenceEntity,Integer> {
+import java.util.List;
+
+public interface AppReferenceRepository extends CrudRepository<AppReferenceEntity, Integer> {
+    @Override
+    List<AppReferenceEntity> findAll();
 }

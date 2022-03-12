@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "AppReference")
+@Table(name = "app_reference")
 public class AppReferenceEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
