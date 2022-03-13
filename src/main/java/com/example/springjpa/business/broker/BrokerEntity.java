@@ -22,9 +22,6 @@ public class BrokerEntity implements Serializable {
     @Column(name = "broker_role")
     private String brokerRole;
 
-    //    @ManyToOne
-//    @JoinColumn(name = "broker_role", referencedColumnName = "code", insertable = false, updatable = false)
-
     @ManyToOne
     @JoinColumn(name = "broker_role", referencedColumnName = "code", insertable = false, updatable = false)
     private BrokerRoleEntity role;
