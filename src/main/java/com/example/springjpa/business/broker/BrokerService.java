@@ -17,4 +17,7 @@ public class BrokerService {
         return brokerRepository.findAll();
     }
 
+    public BrokerEntity save(BrokerEntity broker) {
+        return brokerRepository.save(broker);
+    }
 }

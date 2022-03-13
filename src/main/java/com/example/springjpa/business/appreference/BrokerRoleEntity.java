@@ -9,10 +9,10 @@ import java.io.Serializable;
 @Data
 @Entity
 @Table(name = "app_reference")
-@Where(clause = "domain='BROKER_ROLE'")
+@Where(clause = "domain='ROLE'")
 public class BrokerRoleEntity implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(name = "code")
