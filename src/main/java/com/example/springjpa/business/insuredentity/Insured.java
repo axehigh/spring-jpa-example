@@ -16,7 +16,7 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "INSURED_ENTITY_GROUP")
-public class InsuredEntityGroupEntity implements AbstractEntity, Serializable {
+public class Insured implements AbstractEntity, Serializable {
 
     private static final long serialVersionUID = 5001008823218087766L;
 
@@ -34,11 +34,19 @@ public class InsuredEntityGroupEntity implements AbstractEntity, Serializable {
     @Column(name = "ENTERED_BY_USER_ID")
     private String enteredByUserId;
 
-    @OneToMany(
-            mappedBy = "insuredEntityGroupEntity",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
-    private List<InsuredEntityGroupingEntity> insuredEntityGrouping;
+    @OneToMany(mappedBy = "insured", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<InsuredChild> childs;
 
+
+    public Insured addInsuredChild(InsuredChild client) {
+        childs.add(client);
+        client.setInsured(this);
+        return this;
+    }
+
+    public Insured removeClient(InsuredChild client) {
+        childs.remove(client);
+        client.setInsured(null);
+        return this;
+    }
 }

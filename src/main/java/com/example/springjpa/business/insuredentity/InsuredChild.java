@@ -15,7 +15,7 @@ import java.io.Serializable;
 @Data
 @Entity
 @Table(name = "INSURED_ENTITY_GROUPING")
-public class InsuredEntityGroupingEntity implements AbstractEntity, Serializable {
+public class InsuredChild implements AbstractEntity, Serializable {
 
     private static final long serialVersionUID = 9011037026260314210L;
 
@@ -24,8 +24,8 @@ public class InsuredEntityGroupingEntity implements AbstractEntity, Serializable
     @Column(name = "ID")
     private Integer id;
 
-    @Column(name = "ENTITY_GROUP_ID")
-    private Integer entityGroupId;
+//    @Column(name = "ENTITY_GROUP_ID")
+//    private Integer entityGroupId;
 
     @Column(name = "ENTITY_CODE")
     private String entityCode;
@@ -39,8 +39,8 @@ public class InsuredEntityGroupingEntity implements AbstractEntity, Serializable
     @Column(name = "ENTERED_BY_USER_ID")
     private String enteredByUserId;
 
-    @ManyToOne
-    @JoinColumn(name = "insured_entity_group", referencedColumnName = "id", insertable = false, updatable = false)
-    private InsuredEntityGroupEntity insuredEntityGroupEntity;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ENTITY_GROUP_ID")
+    private Insured insured;
 
 }

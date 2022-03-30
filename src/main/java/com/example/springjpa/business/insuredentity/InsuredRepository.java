@@ -5,8 +5,8 @@ import com.example.springjpa.business.common.SkuldCrudRepository;
 
 import java.util.List;
 
-public interface InsuredEntityGroupRepository extends SkuldCrudRepository<InsuredEntityGroupEntity, Integer> {
+public interface InsuredRepository extends SkuldCrudRepository<Insured, Integer> {
 
     @Override
-    List<InsuredEntityGroupEntity> findAll();
+    List<Insured> findAll();
 }
